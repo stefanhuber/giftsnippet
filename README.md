@@ -15,7 +15,7 @@ The [GIFT format](https://docs.moodle.org/311/en/GIFT_format) allows for managin
 
 Rendered in Moodle the question would look like this:
 
-![Moodle Question](docs/moodle.png "Moodle Question")
+![Moodle Question](./docs/moodle.png "Moodle Question")
 
 To generate the data uri images from real source code files and keep the in sync with a gift file `giftsnippet` can be used.
 
@@ -75,4 +75,11 @@ After any change in the source code files the command could be executed again to
 
 ```bash
 python setup.py test
+```
+
+## Deployment
+
+```text
+python setup.py build
+python -m twine upload dist/*
 ```
