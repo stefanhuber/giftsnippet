@@ -13,7 +13,8 @@ jobs:
       - run: python setup.py test
       - run: pip install setuptools wheel twine
       - run: python setup.py build sdist bdist_wheel
-      - run: python3 -m twine upload dist/*
-          env:
-            TWINE_USERNAME: __token__
-            TWINE_PASSWORD: ${{ secrets.TWINE_TOKEN }}
+      - name: publish
+        run: python3 -m twine upload dist/*
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.TWINE_TOKEN }}
