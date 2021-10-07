@@ -6,11 +6,12 @@ class TestGift(unittest.TestCase):
 
     def test_find_snippet_lines(self):
         lines = giftsnippet.find_snippet_lines('test_data/gift.txt')
-        self.assertEqual(len(lines), 2)
+        self.assertEqual(len(lines), 3)
 
     def test_find_and_read_first_snippet_line(self):
         lines = giftsnippet.find_snippet_lines('test_data/gift.txt')
         self.assertEqual(lines[0]['snippet_file'], "code/geltungsbereiche_03_01.py")
+        self.assertEqual(lines[0]['snippet_filetype'], "py")
 
     def test_replace_line(self):
         test_file_content = "AA\nBB\nCC\nDD\nEE\n"

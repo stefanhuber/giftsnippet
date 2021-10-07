@@ -4,6 +4,9 @@ import giftsnippet
 
 class TestHighlight(unittest.TestCase):
 
+    def test_get_lexer_from_filetype(self):
+        self.assertEqual(giftsnippet.get_lexer_from_filetype('py'), 'python')
+
     def test_get_data_uri(self):
         data_uri_1 = giftsnippet.get_data_uri_snippet('test_data/code/geltungsbereiche_03_01.py')
         data_uri_2 = giftsnippet.get_data_uri_snippet('test_data/code/geltungsbereiche_03_02.py')

@@ -1,6 +1,10 @@
 # Gift Snippet
 
-The [GIFT format](https://docs.moodle.org/311/en/GIFT_format) allows for managing student questions for learning management systems within text files. For using questions which should contain formatted source code (e.g., inside images) a rather cumbersome approach is needed, i.e., adding images as data URIs. The following question demonstrates the problem:
+The [GIFT format](https://docs.moodle.org/311/en/GIFT_format) allows for managing student questions for learning management systems within text files. Integrating images requires a rather cumbersome approach by using data URIs. Additionally, if you want to integrate source code one has to transform the source into an image and than integrate the image via a data URI.
+
+> Gift Snippet aims to simplify integrating images and source code images into gift questions
+
+The following gift question demonstrates the problem:
 
 ```
 [html] <p>What is the correct output of the following code snippet?\:</p><br>
@@ -17,7 +21,7 @@ Rendered in Moodle the question would look like this:
 
 ![Moodle Question](./docs/moodle.png "Moodle Question")
 
-To generate the data uri images from real source code files and keep the in sync with a gift file `giftsnippet` can be used.
+To generate the data uri images from real source code files or existing images and keep it in sync with a gift file `giftsnippet` can be used.
 
 ## Installation
 
@@ -34,6 +38,8 @@ questions.txt
 code_samples/
     example_01.py
     example_02.py
+images/
+    sample_image.png
     ...
 ```
 
@@ -71,6 +77,20 @@ The result would look like this:
 
 After any change in the source code files the command could be executed again to sync the gift questions with the source code.
 
+## Supported snippets
+
+### Code highlighting
+
+```text
+<img data-gift-snippet\="code_samples/example_01.py">
+```
+
+### Images 
+
+```text
+<img data-gift-snippet\="images/sample_image.jpg">
+```
+
 ## Testing
 
 ```bash
@@ -80,6 +100,6 @@ python setup.py test
 ## Deployment
 
 ```text
-python setup.py build
+python setup.py build sdist bdist_wheel
 python -m twine upload dist/*
 ```
