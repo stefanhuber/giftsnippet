@@ -7,7 +7,7 @@ def readme():
 
 
 setuptools.setup(name='giftsnippet',
-      version='0.2.1',
+      version='0.2.2',
       description='Integrate highlighted source code images with data uris into your gift questions',
       long_description=readme(),
       long_description_content_type='text/markdown',
@@ -17,7 +17,7 @@ setuptools.setup(name='giftsnippet',
       author_email='mail@stefanhuber.at',
       license='BSD',
       packages=['giftsnippet'],
-      install_requires=["wheel","Pygments", "Pillow"],
+      install_requires=["wheel", "Pygments", "Pillow"],
       test_suite="giftsnippet.tests",
       include_package_data=True,
       zip_safe=False,
