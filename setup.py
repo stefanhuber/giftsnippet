@@ -7,7 +7,7 @@ def readme():
 
 
 setuptools.setup(name='giftsnippet',
-      version='0.2.2',
+      version='0.2.4',
       description='Integrate highlighted source code images with data uris into your gift questions',
       long_description=readme(),
       long_description_content_type='text/markdown',
